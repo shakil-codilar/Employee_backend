@@ -25,7 +25,7 @@ class SaveButton extends  GenericButton implements ButtonProviderInterface
                                 'actionName' => 'save',
                                 'params' => [
                                     true,
-                                    ['entity_id' =>$id],
+                                    ['entity_id' => $id],
                                 ]
                             ]
                         ]
@@ -34,6 +34,27 @@ class SaveButton extends  GenericButton implements ButtonProviderInterface
             ],
         ];
         return $data;
+//        $data = [];
+//        if ($this->getId()) {
+//            $data = [
+//                'label' => __('Save'),
+//                'class' => 'save primary',
+//                'on_click' => 'Save Confirm(\''
+//                    . __('Are you sure you want to Update this Category?')
+//                    . '\', \'' . $this->getUpdateUrl() . '\')',
+//                'sort_order' => 20,
+//            ];
+//        }
+//        return $data;
+//    }
+//
+//    /**
+//     * @return string
+//     */
+//    public function getUpdateUrl()
+//    {
+//        return $this->getUrl('employee/index/save', ['entity_id' => $this->getId()]);
+//    }
     }
 }
 

@@ -17,7 +17,7 @@ class Edit extends \Magento\Backend\App\Action
      */
     protected $resourceModel;
 
-    protected $_coreRegistry;
+    //protected $_coreRegistry;
 
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
@@ -58,4 +58,5 @@ class Edit extends \Magento\Backend\App\Action
         $resultPage->getConfig()->getTitle()->prepend($pageTitle);
         return $resultPage;
     }
+
 }

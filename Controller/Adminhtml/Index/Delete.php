@@ -29,6 +29,7 @@ class Delete extends \Magento\Backend\App\Action
         parent::__construct($context);
     }
 
+
     public  function  execute()
     {
         $resultRedirect= $this->resultRedirectFactory->create();
@@ -39,7 +40,7 @@ class Delete extends \Magento\Backend\App\Action
             $deleteBrand=$emptyBrand->load($data);
             $deleteBrand->delete();
             $this->messageManager->addSuccessMessage(__('Employee details of %1 deleted successfully', $emptyBrand->getName()));
-            return $resultRedirect->setPath('*/*/listing');
+            return $resultRedirect->setPath('*/*/index');
         }
         catch (\Exception $e) {
             //$this->messageManager->addError($e->getMessage());

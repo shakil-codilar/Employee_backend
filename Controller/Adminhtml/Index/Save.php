@@ -41,6 +41,7 @@ class Save  extends \Magento\Backend\App\Action
         $updateBrand->setAddress($data['address'] );
         $updateBrand->setPhonenumber($data['phonenumber'] );
         $updateBrand->setIsActive($data['is_active'] );
+        $updateBrand->setUpdatedAt($data['updated_at'] );
 
                 $this->resourceModel->save($updateBrand);
                 $this->messageManager->addSuccessMessage(__('Record Successfuly Updated'));

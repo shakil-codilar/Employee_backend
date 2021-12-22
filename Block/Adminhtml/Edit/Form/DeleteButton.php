@@ -9,33 +9,28 @@ class DeleteButton extends  GenericButton implements ButtonProviderInterface
 {
     public function getButtonData(): array
     {
-
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $request = $objectManager->get('Magento\Framework\App\RequestInterface');
-        $id = $request->getParam('entity_id');
-        $data = [
-            'label' => __('Delete '),
-            'class' => ' delete ',
-            'level' => -1,
-            'data_attribute' => [
-                'mage-init' => [
-                    'buttonAdapter' => [
-                        'actions' => [
-                            [
-                                'targetName' => 'employee_listing.employee_listing',
-                                'actionName' => 'delete',
-                                'params' => [
-                                    true,
-                                    ['entity_id' =>$id],
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-            ],
-        ];
+        $data = [];
+        if ($this->getId()) {
+            $data = [
+                'label' => __('Delete'),
+                'class' => 'delete',
+                'on_click' => 'deleteConfirm(\''
+                    . __('Are you sure you want to delete this Category?')
+                    . '\', \'' . $this->getDeleteUrl() . '\')',
+                'sort_order' => 20,
+            ];
+        }
         return $data;
     }
+
+    /**
+     * @return string
+     */
+    public function getDeleteUrl()
+    {
+        return $this->getUrl('employee/index/delete', ['entity_id' => $this->getId()]);
+    }
+
 }
 
 

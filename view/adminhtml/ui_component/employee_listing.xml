@@ -21,7 +21,7 @@
     <dataSource name="employee_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
-                <param name="indexField" xsi:type="string">block_id</param>
+                <param name="indexField" xsi:type="string">entity_id</param>
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
@@ -60,19 +60,9 @@
                         <message translate="true">Are you sure you want to delete selected items?</message>
                         <title translate="true">Delete items</title>
                     </confirm>
-                    <url path="cms/block/massDelete"/>
+                    <url path="employee/index/massDelete"/>
                     <type>delete</type>
                     <label translate="true">Delete</label>
-                </settings>
-            </action>
-            <action name="edit">
-                <settings>
-                    <callback>
-                        <target>editSelected</target>
-                        <provider>employee_listing.employee_listing.employee_columns_editor</provider>
-                    </callback>
-                    <type>edit</type>
-                    <label translate="true">Edit</label>
                 </settings>
             </action>
         </massaction>
@@ -81,7 +71,7 @@
     <columns name="employee_columns">
         <selectionsColumn name="ids">
             <settings>
-                <indexField>block_id</indexField>
+                <indexField>entity_id</indexField>
             </settings>
         </selectionsColumn>
         <column name="entity_id">
@@ -142,7 +132,7 @@
         </column>
         <actionsColumn name="actions" class="Codilar\HelloWorld\Ui\Component\Listing\Column\EmployeeActions">
             <settings>
-                <indexField>block_id</indexField>
+                <indexField>entity_id</indexField>
             </settings>
         </actionsColumn>
     </columns>
