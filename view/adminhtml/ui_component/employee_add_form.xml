@@ -79,10 +79,16 @@
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">email</item>
                 </item>
+                <item name="pattern" xsi:type="array">
+                    <item name="validate" xsi:type="boolean">true</item>
+                    <item name="value" xsi:type="string">[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$</item>
+                    <item name="message" xsi:type="string">Enter Proper input</item>
+                </item>
             </argument>
             <settings>
                 <validation>
                     <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-email" xsi:type="boolean">true</rule>
                 </validation>
                 <dataType>text</dataType>
                 <label translate="true">Email</label>
@@ -115,7 +121,10 @@
             <settings>
                 <validation>
                     <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                    <rule name="stripped-min-length" xsi:type="string">10</rule>
                 </validation>
+
                 <dataType>text</dataType>
                 <label translate="true">Phone Number</label>
                 <dataScope>phonenumber</dataScope>
