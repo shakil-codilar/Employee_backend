@@ -113,7 +113,7 @@
                 <validation>
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                     <rule name="validate-number" xsi:type="boolean">true</rule>
-                    <rule name="stripped-min-length" xsi:type="string">10</rule>
+<!--                    <rule name="stripped-min-length" xsi:type="string">10</rule>-->
                 </validation>
                 <dataType>text</dataType>
                 <label translate="true">Phone Number</label>

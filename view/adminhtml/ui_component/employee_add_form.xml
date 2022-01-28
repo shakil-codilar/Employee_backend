@@ -79,11 +79,6 @@
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">email</item>
                 </item>
-                <item name="pattern" xsi:type="array">
-                    <item name="validate" xsi:type="boolean">true</item>
-                    <item name="value" xsi:type="string">[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$</item>
-                    <item name="message" xsi:type="string">Enter Proper input</item>
-                </item>
             </argument>
             <settings>
                 <validation>
